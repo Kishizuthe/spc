@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+JP:100,200,300,400,500,700&display=swap');
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: $fontFamily;
+  font-size: 62.5%;
+  font-weight: normal;
+  min-width: 375px;
+  color: $colorDefaultText;
+
+  font-feature-settings: 'palt';
+}
+
+body {
+  font-size: $baseFontSizeSp;
+  overflow-x: hidden;
+  transition: .5s ease-in opacity;
+
+  line-break: strict;
+      -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  [data-script-enable] & {
+    opacity: 0;
+    &.isLoaded {
+      opacity: 1;
+    }
+  }
+}
+figure {
+  img {
+    width: 100%;
+    vertical-align: bottom;
+  }
+}
+
+img {
+  max-width: 100%;
+}
+
+em {
+  font-weight: bold;
+  font-style: normal;
+}
+
+
+a {
+  &:link,
+  &:visited {
+    text-decoration: none;
+    color: currentColor;
+  }
+  svg {
+    transition: .2s ease-out filter;
+  }
+  &:hover {
+    svg {
+      filter: drop-shadow(5px 10px 10px rgba(20,0,0,.4));
+    }
+  }
+  &.current {
+    pointer-events: none;
+  }
+  &[href][target='_blank']::after {
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 600;
+    padding: 0 .4rem;
+    content: '\f360';
+    footer & {
+      font-size: 1.1em;
+    }
+  }
+}
+
+ol,
+ul {
+  list-style: none;
+  list-style-type: none;
+}
+
+sup {
+  font-size: .8rem;
+  font-weight: normal;
+  vertical-align: super;
+}
+
+svg {
+  vertical-align: middle;
+  pointer-events: none;
+
+  fill: currentColor;
+}
+
+input,
+textarea {
+  font-size: 1.6rem;
+  height: 3.2rem;
+  padding: 0 1em;
+  border: 1px solid  $colorDefaultText;
+  border-radius: 20px;
+  background-color: #fff;
+}
+::placeholder {
+  color: rgba($colorDefaultText, .3);
+}
+
+@keyframes scale {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  45% {
+    transform: scale(.3);
+    opacity: .7;
+  }
+  80% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}

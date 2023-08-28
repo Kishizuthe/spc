@@ -1,0 +1,50 @@
+extends /_template/_pagebase
+
+block var
+  - var pageTitle = "ログイン";
+  - var pageDescription = 'ログインページ';
+  - var pageClass = 'login';
+  - var pageStyle = ['/assets/css/form.css'];
+  - var pagePath = '/login/'
+  
+block content
+  section.inner
+    h1.page-title ログイン
+    .contents
+      .mod-box(data-type="login")
+        form.login-form(action)
+          dl 
+            dt お客さま番号（半角）またはメールアドレス
+            dd
+              input(type="text")
+            dt ログインパスワード（半角）
+            dd
+              input.password(type="password")
+              i(onclick="const target=this.previousElementSibling;target.type==='text'?target.type='password':target.type='text'")
+
+          .button-wrap
+            button.button(data-type="large fill")
+              span ログイン
+
+          p.center.text
+           em(onclick="PASMOPoint.open_browser('https://www.pasmo.co.jp')") パスワードをお忘れになった方はこちら#[br]（外部ブラウザが開きます）
+
+      .modal
+        .mod-box(data-type="warn")
+          .inner
+            .title ログインに失敗しました
+            .text お客様番号、またはパスワードが違います。
+            .button-wrap
+              button.button(data-type="large warn")
+                span 戻る
+        |<script>
+        |  (function () {
+        |    const modal = document.querySelector('.modal');
+        |    modal.addEventListener('click', function fn(event) {
+        |      if (!event.target.closest('.mod-box') || event.target.closest('button')) {
+        |        modal.removeEventListener('click',fn);
+        |        modal.remove();
+        |      }
+        |    });
+        |  }());
+        |</script>

@@ -1,0 +1,58 @@
+- var serviceName = "パーソナルアセット"
+- var servicesUrl = "https://personal_assets.ne.jp"
+- var update = '20211104';
+
+block var
+  - var pageTitle = '';
+  - var pageScript = '';
+  - var pageStyle = '';
+  - var pageDescription = '';
+  - var pageClass = '';
+  - var pagePath = '';
+  
+
+include /_template/_mixin.pug
+- var pageType = pagePath !== '/' ? 'article' : 'website'
+- var pageUrl = servicesUrl + pagePath
+
+doctype html
+html(lang="ja")
+  block head
+    head
+      meta(charset="utf-8")
+      meta(name="viewport" content="width=device-width,viewport-fit=cover")
+      title #{pageTitle} | SEIBU PRINCE CLUB
+      if pageDescription !== ''
+        meta(name="description" content=pageDescription)
+
+      link(href='https://use.fontawesome.com/releases/v5.5.0/css/all.css' rel='stylesheet')
+      link(href='/assets/css/common.css?' + update rel="stylesheet")
+
+      if pageStyle !== ''
+        if !Array.isArray(pageStyle)
+          link(href=pageStyle rel="stylesheet")
+        else
+          - for (var i = 0; i < pageStyle.length; i++)
+            link(href=pageStyle[i] rel="stylesheet")
+
+  body
+    if pageScript !== ''
+      if !Array.isArray(pageScript)
+        script(src=pageScript)
+      else
+        - for (var i = 0; i < pageScript.length; i++)
+          script(src=pageScript[i])
+
+
+    article
+
+      block header
+        include /_template/_header.pug
+
+      main(class='st-main-content' + (pageClass ? ' ' + pageClass : ''))
+        block content
+
+      block footer
+        include /_template/_footer.pug
+
+      block footerScript

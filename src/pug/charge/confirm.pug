@@ -1,0 +1,46 @@
+extends /_template/_pagebase
+
+block var
+  - var pageTitle = "モバイルのPASMOへチャージ・確認";
+  - var pageDescription = 'モバイルのPASMOへチャージ・確認';
+  - var pageClass = 'charge';
+  
+block content
+  section.inner
+    h1.page-title モバイルのPASMOへチャージ・確認
+
+    .contents
+      .mod-box(data-type="primary")
+        .inner
+          .name ようこそ
+            em 佐藤　名１
+              span 様
+
+        .inner
+          dl.pointsBalance
+            dt 保有ポイント
+            dd
+              em 103,810
+              | ポイント
+          .text
+            span.small お申込み後ポイント残高：
+            span.middle.bold 103,910
+
+      ul.textList
+        li
+          em チャージするポイント数：100ポイント
+        li
+          em モバイルのPASMOへのチャージ金額：100円分
+
+      p.note ※PASMOは株式会社パスモの登録商標です。
+
+      .confirm.text
+        em 上記内容でチャージのお申し込みを承りますが、#[br]よろしいですか？
+      .button-wrap
+        ul
+          li
+            .button(data-type="back fill" onclick="/contact")
+              span 戻る
+          li
+            .button(data-type="fill" onclick="/contact")
+              span お申込み

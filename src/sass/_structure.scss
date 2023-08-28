@@ -1,0 +1,63 @@
+//*** structure ***//
+
+.st-main-content {
+  min-height: calc(100vh - 100px - env(safe-area-inset-bottom));
+  padding-top: .1px;
+  padding-bottom: 4rem;
+
+  > .inner {
+    box-sizing: content-box;
+    max-width: 36rem;
+    margin: 0 auto;
+    padding: 0 1rem;
+    > .contents {
+      + .contents {
+        margin-top: 3rem;
+      }
+    }
+  }
+}
+
+.st-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  background: $colorMain;
+  img {
+    display: block;
+  }
+}
+
+.page-title {
+  font-size: 2rem;
+  font-weight: bold;
+  padding: 3.8rem 0 2rem;
+  text-align: center;
+  color: $colorMain;
+}
+
+.st-footer {
+  font-size: 1.2rem;
+  position: relative;
+  box-shadow: 0 -4px 5px 0 #ddd;
+
+  .inner {
+    max-width: 990px;
+    margin: auto;
+    padding: 1.5rem;
+  }
+
+  .logo {
+    text-align: center;
+
+    a {
+      display: block;
+
+      img {
+        width: 110px;
+        height: 30px;
+      }
+    }
+  }
+}

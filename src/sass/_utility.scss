@@ -1,0 +1,69 @@
+//*** 色
+
+$colorWhite: #fff;
+$colorBase: #f4f4f4;
+$colorBlue: #00399a;
+
+$colorWarn: #f60;
+$colorInfo: #178f09;
+
+$colorBlack: #000;
+$colorMain: #065ca8;
+$colorPrimary: #39bbd9;
+$colorSecondary: #69c;
+$colorAccent: #69c;
+
+$bgAccent: #f9fcff;
+$bgWarn: #fffccc;
+
+
+$colorDefaultText: #666;
+$colorDisabledText: #aaa;
+
+
+
+//*** ブレークポイント
+$breakpoint: (
+  'sp': 'screen and (max-width: 768px)',
+  'pc': 'screen and (min-width: 769px)',
+  'tb': 'screen and (max-width: 1020px)',
+  'pc-and-lg': 'screen and (min-width: 769px) and (max-width: 1200px)',
+  ) !default;
+
+@mixin mq-down($useDevice: pc) {
+  @media #{map-get($breakpoint, $useDevice)} {
+    @content;
+  }
+}
+
+//*** font
+$fontFamily: 'Noto Sans JP', '游ゴシック体', YuGothic, '游ゴシック', 'Yu Gothic', 'Hiragino Sans', sans-serif;
+
+$baseFontSize: 1.5rem;
+$baseFontSizeSp: 1.4rem;
+
+@mixin allCover(){
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+}
+
+// margin補正
+@mixin adjustMargin($lineHeight: 1.6) {
+  line-height: $lineHeight;
+  padding: .1px;
+  &::before,
+  &::after {
+    display: block;
+    content: '';
+  }
+  &::before {
+    margin-top: #{(1 - $lineHeight) * .5}em;
+  }
+  &::after {
+    margin-bottom: #{(1 - $lineHeight) * .5}em;
+  }
+}

@@ -1,0 +1,127 @@
+// general
+
+//
+
+.title {
+  font-size: 2rem;
+  font-weight: bold;
+  + .text {
+    margin-top: 2.8rem;
+  }
+}
+
+.text {
+  @include adjustMargin(1.6);
+
+  a {
+    @extend %textLink;
+  }
+  > p {
+    + p {
+      margin-top: 1em;
+    }
+  }
+  + .text {
+    margin-top: 1em;
+  }
+  &.introduction {
+    @include mq-down(pc) {
+    }
+    @include mq-down(sp) {
+      text-align: left;
+      * + & {
+        margin-top: 3rem;
+      }
+    }
+    + * {
+      @include mq-down(pc) {
+        margin-top: 6rem;
+      }
+      @include mq-down(sp) {
+        margin-top: 5rem;
+      }
+    }
+  }
+  &.attention {
+    color: $colorMain;
+  }
+}
+
+// 注記
+.note {
+  font-size: 1.2rem;
+  text-align: left;
+
+  @include adjustMargin(1.5);
+  .mod-box + & {
+    margin-top: 2.2rem;
+  }
+  .text + & {
+    margin-top: 1.8rem;
+  }
+  .text & {
+    margin-top: 1em;
+  }
+  .icon {
+    svg {
+      width: 13px;
+      height: 13px;
+      margin-right: .4rem;
+
+      fill: currentColor;
+    }
+  }
+  a {
+    @extend %textLink;
+  }
+  + * {
+    margin-top: .6rem;
+  }
+}
+
+.narrow {
+  letter-spacing: -.05em;
+}
+
+.large {
+  font-size: 4rem;
+}
+
+.middle {
+  font-size: 1.6rem;
+}
+
+.small {
+  font-size: 1.2rem;
+}
+
+.bold {
+  font-weight: bold;
+  em {
+    font-style: normal;
+    color: $colorMain;
+  }
+}
+
+.center {
+  text-align: center;
+}
+
+.left {
+  text-align: left;
+}
+
+.right {
+  text-align: right;
+}
+
+.hidden {
+  display: none;
+}
+
+
+@for $i from 1 through 30 {
+  .mt-#{$i} {
+    margin-top: #{$i}px!important;
+  }
+}

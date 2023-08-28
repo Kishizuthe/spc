@@ -1,0 +1,44 @@
+%button {
+  font-size: 14px;
+  font-weight: 400;
+  font-weight: normal;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 100px;
+  height: 40px;
+  padding: 0 1em;
+  cursor: pointer;
+  vertical-align: middle;
+  text-decoration: none;
+  color: $colorMain;
+  border-radius: 23px;
+  background-color: $colorWhite;
+  span {
+    color: currentColor;
+  }
+
+  &[data-type*='large'] {
+    width: 100%;
+  }
+  &[data-type*='fill'] {
+    color: $colorWhite;
+    background-color: $colorPrimary;
+  }
+  &[data-type*='back'] {
+    color: $colorWhite;
+    background-color: $colorSecondary;
+  }
+  &[data-type*='warn'] {
+    color: $colorWhite;
+    background-color: $colorWarn;
+  }
+}
+
+%textLink {
+  text-decoration: underline;
+  color: $colorMain;
+  &:hover {
+    text-decoration: none;
+  }
+}

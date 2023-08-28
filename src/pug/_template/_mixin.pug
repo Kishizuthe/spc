@@ -1,0 +1,31 @@
+mixin jobDesc({title,sumally,pay,contract,area,description,list,note})
+  li.mod-box(data-type="job")
+    .title: h3 !{title}
+    .content
+      .sumally !{sumally}
+      ul.icons
+        li.pay !{pay}
+        li.contract !{contract}
+        li.area !{area}
+      .text
+        p !{description}
+        if list
+          ul.list
+            each item in list
+              li !{item}
+
+        if note
+          .note !{note}
+
+
+mixin clientList(items)
+  .swiper-wrapper
+    .list.swiper-slide
+      each item, index in items
+        if index && index % 6 == 0 
+          .
+            </div><div class="list swiper-slide">
+
+        .item
+          a(href="" + item.link && item.link target="_blank")
+            img(src='/assets/img/client/' + item.img alt=item.name)

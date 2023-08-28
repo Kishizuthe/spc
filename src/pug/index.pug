@@ -1,0 +1,25 @@
+extends /_template/_pagebase
+
+block var
+  - var pageTitle = "ページ一覧";
+  - var pageDescription = 'ページ一覧';
+  
+block content
+  section.inner
+    h1.page-title ページ一覧
+    .contents
+      ul.text.middle
+        li
+          a(href="/login") ログイン
+        li
+          a(href="/login/error.html") ログイン失敗
+        li
+          a(href="/charge") チャージ入力
+        li
+          a(href="/charge/confirm.html") チャージ確認
+        li
+          a(href="/charge/error.html") チャージ失敗
+        li
+          a(href="/charge/loading.html") 通信中
+        li
+          a(href="/charge/success.html") チャージ成功

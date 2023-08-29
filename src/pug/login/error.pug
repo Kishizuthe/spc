@@ -16,11 +16,11 @@ block content
           dl 
             dt お客さま番号（半角）またはメールアドレス
             dd
-              input(type="text")
+              input(type="email")
             dt ログインパスワード（半角）
             dd
               input.password(type="password")
-              i(onclick="const target=this.previousElementSibling;target.type==='text'?target.type='password':target.type='text'")
+              i(onclick="const target=this.previousElementSibling;target.type==='url'?target.type='password':target.type='url'")
 
           .button-wrap
             button.button(data-type="large fill")

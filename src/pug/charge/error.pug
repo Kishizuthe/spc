@@ -1,19 +1,56 @@
 extends /_template/_pagebase
 
 block var
-  - var pageTitle = "エラー";
-  - var pageDescription = 'チャージが完了できませんでした';
-  - var pageClass = 'error';
+  - var pageTitle = "モバイルのPASMOへチャージ・入力";
+  - var pageDescription = 'モバイルのPASMOへチャージ・入力';
+  - var pageClass = 'charge';
   
 block content
   section.inner
-    h1.page-title チャージが完了できませんでした
+    h1.page-title モバイルのPASMOへチャージ・入力
+
     .contents
-      .mod-box(data-type="warn")
+      p.note
+        sup &#xff0a;
+        | 印は必須項目です。
+      .mod-box(data-type="primary")
         .inner
-          .title 注意事項
-          .text 現在、アクセス集中またはメンテナンスのため、一時的にサービスをご利用いただけません。大変申し訳ございませんが、しばらく時間をあけて操作をお試しください。 (エラーコード:8001)
+          .name ようこそ
+            em 佐藤　名１
+              span 様
+
+        .inner
+          dl.pointsBalance
+            dt 保有ポイント
+            dd
+              em 103,810
+              | ポイント
+
+      .mod-box(data-type="warn")
+        .text 合計ポイントがご利用可能ポイントを超えています。長文テキスト・長文テキスト・長文テキスト
+
+      ul.textList
+        li
+          em 利用可能ポイント数：１〜 
+      .usePoint
+        .text チャージするポイント数
+          sup &#xff0a;
+        input(type="text")
+        span.small （半角）
+
+    .contents
+      .mod-box(data-type="secondary")
+        .inner
+          .text 前年1月1日以降のご利用内容に「スマイルリンクポイント」と記載のポイント進呈実績がある方に限ります。
+          .note ※実績がスマイルリンク対象加盟店でのPASMO利用時のポイント進呈のみの場合は、2023年6月3日以降のポイント進呈実績がある方が対象です。
+
+      ul.note
+        li ※1ポイントからお申し込みいただけ、1ヶ月の上限は5,000ポイントまでです。
+        li ※お申し込みは同月内1回のみとなります。
+        li ※チャージする対象のモバイルのPASMOの残高が「20,000円」を超えるチャージはできませんのでご注意ください。
+        li ※PASMOは株式会社パスモの登録商標です。
 
       .button-wrap
-        .button(data-type="large back fill" onclick="PASMOPoint.error('現在、アクセス集中またはメンテナンスのため、一時的にサービスをご利用いただけません。大変申し訳ございませんが、しばらく時間をあけて操作をお試しください。')")
-          span 戻る
+        a.button(data-type="large fill" href="/contact")
+          span 次へ
+

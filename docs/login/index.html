@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,viewport-fit=cover">
+		<title>ログイン | SEIBU PRINCE CLUB</title>
+		<meta name="description" content="ログインページ">
+		<link href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" rel="stylesheet">
+		<link href="/assets/css/common.css?20211104" rel="stylesheet">
+		<link href="/assets/css/form.css" rel="stylesheet">
+	</head>
+	<body>
+		<script></script>
+		<article>
+			<header class="st-header">
+				<div class="logo"><a href="/"><img src="/assets/img/img_logo.png" alt="SEIBU PRINCE CLUB"></a></div>
+			</header>
+			<main class="st-main-content login">
+				<section class="inner">
+					<h1 class="page-title">ログイン</h1>
+					<div class="contents">
+						<div class="mod-box" data-type="login">
+							<form class="login-form" action>
+								<dl> 
+									<dt>お客さま番号（半角）またはメールアドレス</dt>
+									<dd>
+										<input type="text">
+									</dd>
+									<dt>ログインパスワード（半角）</dt>
+									<dd>
+										<input class="password" type="password"><i onclick="const target=this.previousElementSibling;target.type==='text'?target.type='password':target.type='text'"></i>
+									</dd>
+								</dl>
+								<div class="button-wrap">
+									<button class="button" data-type="large fill"><span>ログイン</span></button>
+								</div>
+								<p class="center text"><em onclick="PASMOPoint.open_browser('https://www.pasmo.co.jp')">パスワードをお忘れになった方はこちら<br>（外部ブラウザが開きます）</em></p>
+							</form>
+						</div>
+					</div>
+				</section>
+			</main>
+			<footer class="st-footer"><a class="to-top isHide" href="#"></a>
+				<div class="inner">
+					<nav>
+						<figure>
+							<div class="logo"><a href><img src="/assets/img/group_logo.svg" viewBox="0 0 147 17" title="Seibu Group でかける人を、ほほえむ人へ。"></a></div>
+						</figure>
+					</nav>
+				</div>
+			</footer>
+		</article>
+	</body>
+</html>

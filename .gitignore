@@ -1,5 +1,5 @@
 node_modules/
-docs/
+dest/
 .DS_Store
 package-lock.json
 dest/.htaccess

@@ -106,8 +106,9 @@ function pugs(){
     pretty: '\t',
     basedir: './src/pug'
   }))
-  .pipe(gulp.dest('./docs'))
   .pipe(gulp.dest('./dest'))
+  .pipe(replace('="/', '="/spc/'))
+  .pipe(gulp.dest('./docs'))
   .pipe(debug())
   .pipe(notify({
     onLast: true,
@@ -126,7 +127,7 @@ function debug() {
 
 const browserSyncOption = {
   server: {
-    baseDir: './docs',
+    baseDir: './dest',
     index: 'index.html',
   },
   reloadOnRestart: true,

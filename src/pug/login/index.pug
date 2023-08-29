@@ -4,7 +4,6 @@ block var
   - var pageTitle = "ログイン";
   - var pageDescription = 'ログインページ';
   - var pageClass = 'login';
-  - var pageStyle = ['/assets/css/form.css'];
   - var pagePath = '/login/'
   
 block content
@@ -16,10 +15,10 @@ block content
           dl 
             dt お客さま番号（半角）またはメールアドレス
             dd
-              input(type="url")
+              input(name="id" type="url")
             dt ログインパスワード（半角）
             dd
-              input.password(type="password")
+              input.password(name="password" type="password")
               i(onclick="const target=this.previousElementSibling;target.type==='url'?target.type='password':target.type='url'")
 
           .button-wrap

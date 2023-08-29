@@ -7,7 +7,7 @@
 		<meta name="description" content="ログインページ">
 		<link href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" rel="stylesheet">
 		<link href="/assets/css/common.css?20211104" rel="stylesheet">
-		<link href="/assets/css/form.css" rel="stylesheet">
+		<link rel="stylesheet">
 	</head>
 	<body>
 		<script></script>
@@ -24,11 +24,11 @@
 								<dl> 
 									<dt>お客さま番号（半角）またはメールアドレス</dt>
 									<dd>
-										<input type="email">
+										<input name="id" type="url">
 									</dd>
 									<dt>ログインパスワード（半角）</dt>
 									<dd>
-										<input class="password" type="password"><i onclick="const target=this.previousElementSibling;target.type==='url'?target.type='password':target.type='url'"></i>
+										<input class="password" name="password" type="password"><i onclick="const target=this.previousElementSibling;target.type==='url'?target.type='password':target.type='url'"></i>
 									</dd>
 								</dl>
 								<div class="button-wrap">

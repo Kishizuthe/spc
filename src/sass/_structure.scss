@@ -1,7 +1,7 @@
 //*** structure ***//
 
 .st-main-content {
-  min-height: calc(100vh - 100px - env(safe-area-inset-bottom));
+  min-height: calc(100dvh - 100px);
   padding-top: .1px;
   padding-bottom: 4rem;
 
